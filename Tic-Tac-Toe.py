@@ -49,20 +49,20 @@ def main():
     print("Welcome to Tic-Tac-Toe!")
     print_board(board)
 
-    current_mark = 'X'  # Computer starts with 'X'
+    current_mark = 'X'  
 
     while True:
         if current_mark == 'X':
-            # Computer's turn
+            
             while True:
-                computer_move = randrange(9) + 1  # Generate a random move (1-9)
+                computer_move = randrange(9) + 1  
                 row = (computer_move - 1) // 3
                 col = (computer_move - 1) % 3
                 if board[row][col].isdigit():
                     board[row][col] = 'X'
                     break
         else:
-            # User's turn
+            
             while True:
                 try:
                     user_move = int(input("Enter your move (1-9): "))
@@ -81,7 +81,7 @@ def main():
 
         print_board(board)
 
-        # Check if someone won
+
         if check_win(board, current_mark):
             if current_mark == 'X':
                 print("Computer won!")
